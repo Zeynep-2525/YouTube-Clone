@@ -1,0 +1,87 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Position Practice</title>
+    <style>
+        .d1 {
+            background-color: lightblue;
+            height: 200px;
+            width: 200px;
+            position: static;
+            /* margin-top: 70px; bu geçici çözüm onu yerine: body elementine padding veya margin ekle */
+
+        }
+        .d2 {
+            background-color: lightpink;
+            height: 200px;
+            width: 200px;
+            z-index: 1;
+        }
+        .header {
+            background-color: black;
+            color: white;
+            position: fixed; /* pencerede sabit kalır*/
+            top: 0px; /* yukarıdan ne kadar aşağıda olacağını belirle */
+            left: 0px; /* soldan ne kadar sağa kayacağını belirle*/
+            right: 0px;
+            height: 50px; /*eğer sayfa boyutu değiştikçe değişmesini istemiyorsan standart getirmek için basitçe width ve height ekleyebilirsin */
+            z-index: 3; /*kimin üstte olacağını belirler 1 üstte demek,layer gibi genelde 100 e ayarlanır */
+        }
+        body {
+            height: 3000px;
+            padding-top: 60px;
+            padding-left: 64px;
+        }
+        .sidebar{
+            background-color: green;
+            color: white;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            top: 50px;
+            width: 72px;
+        }
+        .absolute{
+            position: absolute; /*positions on the page,it stays where it was before  */
+            background-color: aquamarine;
+            left: 10px;
+            top: 10px;
+        }
+        .absolute-second{
+            position: absolute; /* */
+            background-color: rgb(255, 0, 0);
+            right: 0;
+            top: 0px;
+        }
+        .absolute-third{
+            position: relative; /* */
+            background-color: rgb(255, 0, 0);
+            top: 140px;
+            right: 10px;
+            left: 165px;
+            z-index: 2;
+            width: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        header
+    </div>
+    
+    <div class="sidebar">sidebar
+        <div class="absolute-second">X</div>
+
+    </div>
+    <div class="absolute">absolute</div>
+    <div class="d1">div 1</div>
+    <div class="d2">
+        div 2
+        <div class="absolute-third">5:00</div>
+    </div>
+</body>
+
+</html>
